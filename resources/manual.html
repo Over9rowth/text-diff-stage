@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>文本差异显影台 - 用户使用说明书</title>
+  <style>
+    @page { size: A4; margin: 20mm; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
+      color: #064e3b;
+      line-height: 1.6;
+      font-size: 13px;
+    }
+    h1 { font-size: 24px; color: #022c22; border-bottom: 2px solid #059669; padding-bottom: 8px; margin-bottom: 16px; }
+    h2 { font-size: 16px; color: #047857; margin-top: 20px; margin-bottom: 8px; border-left: 4px solid #059669; padding-left: 8px; }
+    p { margin-bottom: 10px; }
+    ul { margin-bottom: 10px; padding-left: 20px; }
+    li { margin-bottom: 4px; }
+    .box { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 6px; padding: 12px; margin-bottom: 16px; }
+    .footer { margin-top: 30px; font-size: 11px; color: #6ee7b7; text-align: center; border-top: 1px solid #bbf7d0; padding-top: 10px; }
+  </style>
+</head>
+<body>
+  <h1>文本差异显影台 (TextDiffStage) v0.1.0 使用说明书</h1>
+  <p><strong>出品</strong>：Over9rowth &nbsp;|&nbsp; <strong>定位</strong>：合同/公文双版本段落对齐与隐蔽篡改显影台</p>
+  
+  <div class="box">
+    <strong>【核心理念与观测边界】</strong><br>
+    文本差异显影台旨在解决商务谈判、合同签署及公文回传过程中“被悄悄修改关键条款”的风险。本工具基于确定性 LCS 段落对齐与 Myers 最短编辑路径算法，搭载数字金额、否定词反转及程度词弱化三大高危探针。100% 本机离线运行，绝不上传任何隐私文本。
+  </div>
+
+  <h2>一、主要功能特性</h2>
+  <ul>
+    <li><strong>抗段落插入错位</strong>：采用 Bigram Jaccard 相似度结合动态规划段落对齐，避免因首段增删导致后续全文错乱。</li>
+    <li><strong>字符级内联高亮</strong>：精准定位每一个增删字符，绿色下划线标示新增，红色删除线标示删除。</li>
+    <li><strong>高危改动语义探针</strong>：
+      <ul>
+        <li><strong>数字金额探针</strong>：捕获百分比、阿拉伯数字及大写金额变动（如 5% 变为 0.5%）；</li>
+        <li><strong>否定极性反转</strong>：捕获“不/未/无/免除/禁止”等否定词的增删；</li>
+        <li><strong>权利义务弱化</strong>：识别“应当”改“可以”、“验收合格”改“基本合格”等法律责任推诿。</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h2>二、操作指南</h2>
+  <ul>
+    <li><strong>启动即用</strong>：打开程序自动展示内置采购合同比对样本，毫秒级揪出 3 处高危修改。</li>
+    <li><strong>导入用户文本</strong>：将双方初稿与回传版分别粘贴入左右文本框，下方自动输出逐段内联高亮与风险清单。</li>
+    <li><strong>导出数据与留证</strong>：点击右上角「导出显影报告 (JSON)」与「导出说明书 (PDF)」保存审计凭证。</li>
+  </ul>
+
+  <div class="footer">
+    Copyright © 2026 Over9rowth. All Rights Reserved. 纯本机离线运行 · 守护法律合同真实性
+  </div>
+</body>
+</html>

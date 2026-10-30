@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#022c22" />
+      <stop offset="100%" stop-color="#064e3b" />
+    </linearGradient>
+    <linearGradient id="glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#34d399" />
+    </linearGradient>
+  </defs>
+  <rect width="256" height="256" rx="48" fill="url(#bg)" />
+  <!-- 双页面对比显影 -->
+  <rect x="52" y="60" width="70" height="136" rx="6" fill="#0f172a" stroke="#10b981" stroke-width="3" />
+  <rect x="134" y="60" width="70" height="136" rx="6" fill="#0f172a" stroke="#34d399" stroke-width="3" />
+  <path d="M64 90h46M64 110h46M64 130h46M64 150h30" stroke="#475569" stroke-width="4" stroke-linecap="round" />
+  <path d="M146 90h46M146 110h30M146 130h46M146 150h46" stroke="#475569" stroke-width="4" stroke-linecap="round" />
+  <!-- 高危差异高亮标记 -->
+  <circle cx="176" cy="110" r="10" fill="#f43f5e" />
+  <path d="M110 110L146 110" stroke="#f43f5e" stroke-width="3" stroke-dasharray="3 3" />
+</svg>
